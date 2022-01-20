@@ -20,6 +20,14 @@ servidor.get('/filme' , (req,res)=>{
 servidor.get('/generos' , (req,res)=> {
     res.send("acao,drama,comedia,...");
 })
+servidor.get('/filmes/:posicao' ,(req,res)=>{
+    let posicao = req.params.posicao;
+
+    const filmes =require('./database/filmes.json');
+
+    res.send(filmes[posicao])
+})
+
 
 // por o servidor para 'ouvir'as requisições
 servidor.listen(3000);
