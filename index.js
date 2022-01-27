@@ -32,12 +32,14 @@ servidor.get('/buscar/:titulo', (req,res)=>{
     res.send(req.params.titulo)
 }) 
 
-servidor.get('/buscar/:trecho', (req, res)=>{
-var trecho = req.params.trecho
-const filmes = require('./database/filmes.json')
-filmes.filter(trecho);
-res.send(filmes(trecho))
+servidor.get('/busca/:trecho', (req, res)=>{
+    let trecho = req.params.trecho;
+
+    const filmes = require('./database/filmes.json');
     
-});
+    filmes.filter(trecho);
+    
+    res.send(filmes[trecho]);
+    });
 
 servidor.listen(3000);
