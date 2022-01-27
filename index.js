@@ -28,6 +28,16 @@ servidor.get('/filmes/:posicao' ,(req,res)=>{
     res.send(filmes[posicao])
 })
 
+servidor.get('/buscar/:titulo', (req,res)=>{
+    res.send(req.params.titulo)
+}) 
 
-// por o servidor para 'ouvir'as requisições
+servidor.get('/buscar/:trecho', (req, res)=>{
+var trecho = req.params.trecho
+const filmes = require('./database/filmes.json')
+filmes.filter(trecho);
+res.send(filmes(trecho))
+    
+});
+
 servidor.listen(3000);
