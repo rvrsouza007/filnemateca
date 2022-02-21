@@ -1,7 +1,9 @@
 const FilmesContoller = {
     index: (req, res)=>{
-        console.log("alguem fez uma requisicao....");
-        res.send("toma ai op que voce pediu...");
+        //carregar todos os filmes
+        const filmes = require('../database/filmes.json');
+        //renderizar a view  index.ejs
+        res.render('index.ejs',{filmes})
     },
     listar:(req,res)=>{
         res.send("fui no cinema assstir o novo homem aranha!!!")
@@ -13,20 +15,26 @@ const FilmesContoller = {
         let posicao = req.params.posicao;
     
         const filmes =require('../database/filmes.json');
-    
-        res.send(filmes[posicao])
+        
+        let filme =filmes[posicao];
+        res.render('filme.ejs', {filme})
     },
     titulo:(req,res)=>{
         res.send(req.params.titulo)
     },
     trecho:(req, res)=>{
         let trecho = req.params.trecho;
+
         console.log("foi feita uma requisicao")
+
         const filmes = require('../database/filmes.json')
         let filtrador = filme =>{
+            
             return filme.titulo.includes(trecho);
         }
+
         let nomeDoFilme = filmes.filter(filtrador);
+        
         res.send(nomeDoFilme);
     },
 };
