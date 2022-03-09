@@ -23,7 +23,7 @@ const FilmesContoller = {
         res.send(req.params.titulo)
     },
     trecho:(req, res)=>{
-        let trecho = req.params.trecho;
+        let trecho = req.query.busca;
 
         console.log("foi feita uma requisicao")
 
@@ -35,7 +35,7 @@ const FilmesContoller = {
 
         let nomeDoFilme = filmes.filter(filtrador);
         
-        res.send(nomeDoFilme);
+        res.render('index.ejs', {filmes:nomeDoFilme});
     },
 };
 module.exports = FilmesContoller;

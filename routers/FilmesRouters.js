@@ -17,7 +17,7 @@ router.get('/filmes/:posicao',FilmesController.posicao)
 // função peloTitulo
 router.get('/buscar/:titulo',FilmesController.titulo)
 // função buscarPorTrecho
-router.get('/busca/:trecho',FilmesController.trecho);
+router.get('/busca',FilmesController.trecho);
 
 //criar uma rota "/teste" respondendo oi!
 router.get('/teste', (req, res)=>{
