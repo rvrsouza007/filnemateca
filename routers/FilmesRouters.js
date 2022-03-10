@@ -13,7 +13,7 @@ router.get('/filme',FilmesController.listar )
 // função porGeneros
 router.get('/generos',FilmesController.generos)
 // função pelaPosição
-router.get('/filmes/:posicao',FilmesController.posicao)
+router.get('/filmes/:id',FilmesController.id)
 // função peloTitulo
 router.get('/buscar/:titulo',FilmesController.titulo)
 // função buscarPorTrecho
@@ -23,5 +23,5 @@ router.get('/busca',FilmesController.trecho);
 router.get('/teste', (req, res)=>{
     res.send("oi sumido!")
 })
-// eexportar o router
+// eexportar o router 
 module.exports = router;

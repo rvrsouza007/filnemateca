@@ -37,5 +37,26 @@ const FilmesContoller = {
         
         res.render('index.ejs', {filmes:nomeDoFilme});
     },
+    id:(req, res)=>{
+
+        let id = req.params.id;
+
+        const filmes = require("../database/filmes.json");
+
+        let filtradora = filme => {
+            if(filme.id == id){
+                return true;
+            }else{
+                return false;
+            }
+        };
+
+        const filme = filmes.find(filtradora);
+
+        res.render('filme.ejs', {filme});
+
+    },
+
 };
+
 module.exports = FilmesContoller;
