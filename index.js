@@ -13,10 +13,8 @@ servidor.set('view engine', 'ejs');
 //confg a pasta  public como cordenadora dos arquivos estaticos
 servidor.use(express.static(path.join(__dirname, 'public')));
 
-
 //usando FilmesRouter 
 servidor.use('/',FilmesRouter)
-
 
 
 servidor.listen(3000);
