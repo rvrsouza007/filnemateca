@@ -5,6 +5,8 @@ const middlewareGlobal = require('./middleware/middlewareGlobal');
 // Importandoos routers
 const FilmesRouter = require("./routers/FilmesRouters")
 
+const AdmRouter = require('./routers/AdmRouter')
+
 //criando servidor
 const servidor = express();
 
@@ -18,6 +20,7 @@ servidor.use(middlewareGlobal)
 
 //usando FilmesRouter 
 servidor.use('/',FilmesRouter)
+servidor.use('/',AdmRouter)
 
 
 servidor.listen(3000);
