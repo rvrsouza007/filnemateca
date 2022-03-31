@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Festive&family=Roboto&display=swap');
+    </style>
     <title>Login</title>
 
 </head>
 <body>
     <form action="/login" method="post">
-        <label>
+        <label class="email">
+            <h1>login</h1>
             <span>Email</span>
             <input type="text" name="email" id="email">
         </label>
-        <label>
+        <label class="senha">
             <span>senha</span>
             <input type="password" name="senha" id="senha">
         </label>
-        <div>
+        <div class="entrar">
             <a href="/esqueci">Esqueci a senha</a>
             <button type="submit">Entrar</button>
         </div>

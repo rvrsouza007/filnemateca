@@ -16,6 +16,10 @@ servidor.set('view engine', 'ejs');
 //confg a pasta  public como cordenadora dos arquivos estaticos
 servidor.use(express.static(path.join(__dirname, 'public')));
 
+//põe as informacoes do usuario no req.body
+servidor.use(express.urlencoded({ extended: false }));
+
+
 servidor.use(middlewareGlobal)
 
 //usando FilmesRouter 
