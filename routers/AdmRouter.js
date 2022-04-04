@@ -9,5 +9,8 @@ const router = express.Router();
 router.get('/login',AdmController.mostraLogin);
 router.post('/login',AdmController.login);
 
+router.get('/esqueci',AdmController.mostrarEsqueci);
+router.post('/esqueci',AdmController.lembrarSenha);
+
 // exportar o roteador
 module.exports = router ;
