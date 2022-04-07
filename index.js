@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require ('path');
 const middlewareGlobal = require('./middleware/middlewareGlobal');
+const session = require('express-session')
 
 // Importandoos routers
 const FilmesRouter = require("./routers/FilmesRouters")
@@ -15,6 +16,10 @@ servidor.set('view engine', 'ejs');
 
 //confg a pasta  public como cordenadora dos arquivos estaticos
 servidor.use(express.static(path.join(__dirname, 'public')));
+
+
+
+servidor.use(session({secret:"SEGREDO", saveUninitialized: false, resave: true}));
 
 //põe as informacoes do usuario no req.body
 servidor.use(express.urlencoded({ extended: false }));

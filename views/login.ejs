@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="/css/login.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Festive&family=Roboto&display=swap');
-    </style>
+    </style> 
     <title>Document</title>
 </head>
 <body>
     <form action="/login" method="post">
+        <% if (erro == 1) { %>
+            <div>falha no login</div>
+        <% } %>
         <label>
             <h1>Login</h1>
             <span>Email:</span>
