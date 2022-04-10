@@ -7,5 +7,10 @@
     {
         "email":"teste2@gmail.com",
         "senha":"678910"
+    },
+
+    {
+        "email":"teste1@gmail.com",
+        "senha":"67890"
     }
 ]
